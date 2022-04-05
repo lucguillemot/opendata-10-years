@@ -1,1 +1,12 @@
-{"hed":"This is a Headline","dek":"This is a dek."}
+{
+  "title": "Opendata.ch 10 Jahre Rückblick",
+  "introduction": [
+    "To celebrate our 10th anniversary, we would like to look back at our activities and highlights over the past 10 years. This review serves as documentation, inspiration and basis for the next 10 years of Opendata.ch in Switzerland. Thank you all for joining us on this journey for an open, innovative and fair society."
+  ],
+  "years": [
+    { "year": "2011", "text": "First open data conference in Switzerland." },
+    { "year": "2012", "text": "Foundation of the association Opendata.ch on January 19 in Bern." },
+    { "year": "2013", "text": "First open knowledge conference in Switzerland." },
+    { "year": "2014", "text": "Federal Council adopts OGD Strategy 2014 - 2018." }
+  ]
+}

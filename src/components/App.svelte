@@ -1,9 +1,10 @@
 <script>
   import Section from "./Section.svelte";
+  import doc from "$data/doc.json";
 </script>
 
 <Section>
-  <h1>Opendata.ch 10 Jahre Rückblick</h1>
+  <h1>{@html doc.title}</h1>
 </Section>
 
 <style>
