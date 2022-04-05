@@ -1,14 +1,17 @@
 <script>
-  import wordmark from "$svg/wordmark.svg";
+  import logo from "$svg/logo.svg";
 </script>
 
 <header>
   <div class="wordmark">
-    <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
+    <a href="https://opendata.ch/" aria-label="Opendata.ch">{@html logo}</a>
   </div>
 </header>
 
 <style>
+  header {
+    border-top: 7px solid #e61414;
+  }
   .wordmark {
     max-width: 10em;
     margin: 0 auto;
