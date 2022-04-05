@@ -2,96 +2,96 @@
 
 @font-face {
   font-family: "m3bold";
-  src: url("./assets/fonts/m3/m3bold-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3bold-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3bold-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3bold_italic";
-  src: url("./assets/fonts/m3/m3boldital-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3boldital-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3boldital-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3boldital-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3light";
-  src: url("./assets/fonts/m3/m3light-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3light-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3light-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3light_italic";
-  src: url("./assets/fonts/m3/m3lightital-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3lightital-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3lightital-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3lightital-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3_monobold";
-  src: url("./assets/fonts/m3/m3monobold-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3monobold-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3monobold-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3monobold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3_monobold_italic";
-  src: url("./assets/fonts/m3/m3monoboldital-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3monoboldital-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3monoboldital-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3monoboldital-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3_monolight";
-  src: url("./assets/fonts/m3/m3monolight-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3monolight-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3monolight-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3monolight-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3_monolight_italic";
-  src: url("./assets/fonts/m3/m3monolightital-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3monolightital-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3monolightital-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3monolightital-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3_monoregular";
-  src: url("./assets/fonts/m3/m3monoregular-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3monoregular-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3monoregular-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3monoregular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3_monoitalic";
-  src: url("./assets/fonts/m3/m3monoregularital-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3monoregularital-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3monoregularital-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3monoregularital-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3regular";
-  src: url("./assets/fonts/m3/m3regular-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3regular-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3regular-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "m3italic";
-  src: url("./assets/fonts/m3/m3regularital-webfont.woff2") format("woff2"),
-    url("./assets/fonts/m3/m3regularital-webfont.woff") format("woff");
+  src: url("/assets/fonts/m3/m3regularital-webfont.woff2") format("woff2"),
+    url("/assets/fonts/m3/m3regularital-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
