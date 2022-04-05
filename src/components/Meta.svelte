@@ -1,8 +1,8 @@
 <script>
-  export let title = "Title TK";
-  export let description = "Description TK";
-  export let url = "https://pudding.cool";
-  export let keywords = "";
+  export let title = "Opendata.ch 10 Jahre Rückblick";
+  export let description = "Opendata.ch 10 Jahre Rückblick";
+  export let url = "https://opendata.ch/";
+  export let keywords = "opendata, switzerland, open knowledge";
   export let preloadFont = [];
 </script>
 
