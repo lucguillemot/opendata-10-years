@@ -42,7 +42,9 @@
               {@html step.year}
             </div>
           {/if}
-          <div class="step-text">{@html step.text}</div>
+          {#each step.texts as text}
+            <p class="step-text">{@html text.text}</p>
+          {/each}
         </div>
       {/each}
     </div>
@@ -120,8 +122,8 @@
   }
   .step-text {
     font-size: 1.3rem;
-
     padding: 1rem 0;
+    margin-bottom: 30rem;
   }
   @media only screen and (min-width: 30em) {
     h3 {
