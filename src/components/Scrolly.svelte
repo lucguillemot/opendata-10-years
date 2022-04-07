@@ -42,8 +42,14 @@
               {@html step.year}
             </div>
           {/if}
-          {#each step.texts as text}
-            <p class="step-text">{@html text.text}</p>
+          {#each step.texts as content}
+            {#if content.type === "paragraph"}
+              <p class="step-text">{@html content.text}</p>
+            {:else if content.type === "quote"}
+              <quote class="step-text">{@html content.text}</quote>
+            {:else if content.type === "image"}
+              <img class="step-image" src="/assets/images/{content.src}" alt="" />
+            {/if}
           {/each}
         </div>
       {/each}
@@ -123,7 +129,7 @@
   .step-text {
     font-size: 1.3rem;
     padding: 1rem 0;
-    margin-bottom: 30rem;
+    margin: 5rem 0;
   }
   @media only screen and (min-width: 30em) {
     h3 {
