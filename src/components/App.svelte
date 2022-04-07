@@ -11,6 +11,11 @@
 
 <Years />
 
+<Section>
+  <h1>{@html doc.future_title}</h1>
+  <p>{@html doc.future_text}</p>
+</Section>
+
 <style>
   h1 {
     font-family: "m3regular";
