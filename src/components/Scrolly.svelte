@@ -1,5 +1,6 @@
 <script>
   export const ssr = false;
+  import map from "$svg/optimized/map.svg";
 
   import Section from "$components/Section.svelte";
   import doc from "$data/doc.json";
@@ -32,7 +33,11 @@
 
 <Section id="years-scrolly">
   <div id="scrolly">
-    <figure>{activeStep.year} {activeStep.conference}</figure>
+    <figure>
+      {activeStep.year}
+      {activeStep.conference}
+      <!-- {@html map} -->
+    </figure>
 
     <div class="scroll-area">
       {#each steps as step, i}
@@ -69,7 +74,7 @@
     position: sticky;
 
     width: 100%;
-    height: 100px;
+    height: 80vh;
 
     padding: 1rem;
 
