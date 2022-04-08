@@ -2,8 +2,6 @@
   export const ssr = false;
 
   import { setup } from "$components/scrolly-setup.js";
-
-  // import Map from "$components/map/Map.svelte";
   import Section from "$components/Section.svelte";
   import doc from "$data/doc.json";
   import MapSvg from "$components/map/Map.svg.svelte";
@@ -57,87 +55,101 @@
 <svelte:window />
 
 <Section id="years-scrolly" fullBleed>
-  <div id="scrolly">
-    <figure>
-      <div class="map-container">
-        <LayerCake data={cantons}>
-          {#if setup[activeStep.year].conference === "Online"}
-            <div class="online">Online</div>
-          {/if}
-          <Svg>
-            <MapSvg {projection} features={cantons.features} stroke="#ddd" />
-            <MapSvg {projection} features={country.features} stroke="black" fill="none" />
-            <MapSvg {projection} features={lakes.features} fill="aliceblue" stroke="#ADD8FE" />
-            <!-- <MapSvg {projection} features={confCity.features} fill="red" /> -->
-          </Svg>
+  <div class="wrapper">
+    <div id="scrolly">
+      <figure class="map">
+        <div class="map-container">
+          <LayerCake data={cantons}>
+            {#if setup[activeStep.year].conference === "Online"}
+              <div class="online">Online</div>
+            {/if}
+            <Svg>
+              <MapSvg {projection} features={cantons.features} stroke="#ddd" />
+              <MapSvg {projection} features={country.features} stroke="black" fill="none" />
+              <MapSvg {projection} features={lakes.features} fill="aliceblue" stroke="#ADD8FE" />
+              <!-- <MapSvg {projection} features={confCity.features} fill="red" /> -->
+            </Svg>
 
-          <Html pointerEvents={false}>
-            <MapLabels
-              {projection}
-              features={labels}
-              getCoordinates={(d) => d.coord}
-              getLabel={(d) => d.name}
-              fontSize={"1.2rem"}
-              opacity={0.5}
-              color="rgb(215, 215, 215)"
-            />
-            <MapLabels
-              {projection}
-              features={confCity}
-              getCoordinates={(d) => d.coord}
-              getLabel={(d) => d.name}
-              fontSize={"3rem"}
-              opacity={1}
-              color="#e61414"
-            />
-            <MapLabels
-              {projection}
-              features={hackCities}
-              getCoordinates={(d) => d.coord}
-              getLabel={(d) => d.name}
-              fontSize={"1.2rem"}
-              color="#1d61db"
-            />
-          </Html>
-        </LayerCake>
-      </div>
-      <div class="legend">
-        <div class="legend-conference">Main conference</div>
-        <div class="legend-hackathon">Hackathons</div>
-      </div>
-    </figure>
+            <Html pointerEvents={false}>
+              <MapLabels
+                {projection}
+                features={labels}
+                getCoordinates={(d) => d.coord}
+                getLabel={(d) => d.name}
+                fontSize={"1.2rem"}
+                opacity={0.5}
+                color="rgb(215, 215, 215)"
+              />
+              <MapLabels
+                {projection}
+                features={confCity}
+                getCoordinates={(d) => d.coord}
+                getLabel={(d) => d.name}
+                fontSize={"3rem"}
+                opacity={1}
+                color="#e61414"
+              />
+              <MapLabels
+                {projection}
+                features={hackCities}
+                getCoordinates={(d) => d.coord}
+                getLabel={(d) => d.name}
+                fontSize={"1.2rem"}
+                color="#1d61db"
+              />
+            </Html>
+          </LayerCake>
+        </div>
+        <div class="legend">
+          <div class="legend-conference">Main conference</div>
+          <div class="legend-hackathon">Hackathons</div>
+        </div>
+      </figure>
 
-    <div class="scroll-area">
-      {#each steps as step, i}
-        <div class="step step-year" class:selected={selected === i}>
-          {#if step.year}
+      <div class="scroll-area">
+        {#each steps as step, i}
+          <div class="step step-year" class:selected={selected === i}>
             <h2 class="step-title">
               {@html step.year}
             </h2>
-          {/if}
-          {#each step.texts as content}
-            {#if content.type === "paragraph"}
-              <p class="step-text">{@html content.text}</p>
-            {:else if content.type === "quote"}
-              <quote class="step-text">{@html content.text}</quote>
-            {:else if content.type === "image"}
-              <img class="step-image" src="/assets/images/{content.src}" alt="" />
-            {/if}
-          {/each}
-        </div>
-      {/each}
+
+            {#each step.texts as content}
+              {#if content.type === "paragraph"}
+                <p class="step-text">{@html content.text}</p>
+              {:else if content.type === "quote"}
+                <figure class="quote">
+                  <blockquote>
+                    <p>
+                      {@html content.text}
+                    </p>
+                  </blockquote>
+                  <cite><a href={content.source_url}>- {@html content.source_label}</a></cite>
+                </figure>
+              {:else if content.type === "image"}
+                <img class="step-image" src="/assets/images/{content.src}" alt="" />
+              {/if}
+            {/each}
+          </div>
+        {/each}
+      </div>
     </div>
   </div>
 </Section>
 
 <style>
+  .wrapper {
+    max-width: 126rem;
+    margin: 0 auto;
+  }
   #scrolly {
     position: relative;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
-  figure {
+
+  /* FIGURE */
+  figure.map {
     position: -webkit-sticky;
     position: sticky;
 
@@ -148,7 +160,7 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     left: 0;
@@ -164,6 +176,7 @@
   .map-container {
     width: 100%;
     height: 80%;
+    padding: 2rem;
   }
   .online {
     position: absolute;
@@ -175,6 +188,7 @@
   }
   .legend {
     align-self: flex-start;
+    /* background: gold; */
   }
   .legend-conference {
     color: var(--color-highlight);
@@ -185,14 +199,15 @@
     font-size: 1rem;
   }
 
+  /* SCROLLY */
   .scroll-area {
     position: relative;
   }
 
   .step {
     width: 100%;
-    /* max-width: 24rem; */
-    margin: 30rem auto 2rem auto;
+    font-family: "m3light", Arial, Helvetica, sans-serif;
+    margin: 20rem auto 2rem auto;
     padding: 1rem 1rem;
 
     opacity: 0.3;
@@ -211,6 +226,7 @@
     opacity: 1;
   }
   .step-title {
+    font-family: "m3", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 2rem;
@@ -223,13 +239,38 @@
     background: var(--color-highlight);
     height: 3px;
     width: 100px;
-    margin: 1.5rem auto 2rem;
+    margin: 0.5rem auto 1rem;
     border-radius: 2px;
   }
   .step-text {
     font-size: 1.3rem;
-    padding: 1rem 0;
-    margin: 5rem 0;
+    margin-bottom: 0.5rem;
+  }
+  .step-image {
+    margin-bottom: 1rem;
+  }
+
+  figure.quote {
+    background: #efefef;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+  blockquote {
+    margin: 0;
+  }
+
+  blockquote p {
+    font-family: "m3light_italic", Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    margin: 0 0 0.3rem 0;
+  }
+
+  blockquote p::before {
+    content: "\201C";
+  }
+
+  blockquote p::after {
+    content: "\201D";
   }
   @media only screen and (min-width: 30em) {
   }
