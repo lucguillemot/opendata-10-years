@@ -2,6 +2,7 @@
   export const ssr = false;
   import map from "$svg/optimized/map.svg";
 
+  import Map from "$components/map/Map.svelte";
   import Section from "$components/Section.svelte";
   import doc from "$data/doc.json";
 
@@ -37,6 +38,7 @@
       {activeStep.year}
       {activeStep.conference}
       <!-- {@html map} -->
+      <Map />
     </figure>
 
     <div class="scroll-area">
