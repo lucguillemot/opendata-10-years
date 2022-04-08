@@ -23,6 +23,7 @@ specifiers:
   svelte: ^3.46.4
   svelte-preprocess: ^4.10.3
   svgo: ^2.8.0
+  swiss-maps: ^4.1.0
   topojson-client: ^3.1.0
   vite-plugin-svgstring: ^1.0.0
 
@@ -32,6 +33,7 @@ dependencies:
   rollup: 1.32.1
   scrollama: 3.1.1
   svgo: 2.8.0
+  swiss-maps: 4.1.0
   topojson-client: 3.1.0
 
 devDependencies:
@@ -1451,6 +1453,10 @@ packages:
       csso: 4.2.0
       picocolors: 1.0.0
       stable: 0.1.8
+    dev: false
+
+  /swiss-maps/4.1.0:
+    resolution: {integrity: sha512-FQUkHSFARWk+7Npq8AzNt4VHYjKuF5zhXrfW0Olo7P0u6vm5fMLsEgc53mwROGxDy+enb2anXDFzTIoJmIAqJQ==}
     dev: false
 
   /tiny-glob/0.2.9:
