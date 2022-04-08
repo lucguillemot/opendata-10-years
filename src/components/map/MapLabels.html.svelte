@@ -22,6 +22,8 @@
   /** @type {Array} [features] - A list of labels as GeoJSON features. If unset, the plotted features will defaults to those in `$data.features`, assuming this field a list of GeoJSON features. */
   export let features = undefined;
 
+  export let fontSize = "1rem";
+
   $: fitSizeRange = fixedAspectRatio ? [100, 100 / fixedAspectRatio] : [$width, $height];
 
   $: projectionFn = projection().fitSize(fitSizeRange, $data);
@@ -37,6 +39,7 @@
       style="
       left: {coords[0]}{units};
       top: {coords[1]}{units};
+      font-size: {fontSize};
     "
     >
       {getLabel(d)}
@@ -54,7 +57,6 @@
     text-align: center;
     font-size: 8px;
     color: red;
-    font-size: 2rem;
     margin-top: -3px; /* To match the SVG labels, it needs a slight tweak */
     transform: translate(-50%, -50%);
   }
