@@ -56,6 +56,9 @@
     },
     "highlight": {
       "value": "#e61414"
+    },
+    "secondary": {
+      "value": "#1d61db"
     }
   }
 }

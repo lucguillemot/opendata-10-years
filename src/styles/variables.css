@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 05 Apr 2022 15:28:08 GMT
+ * Generated on Fri, 08 Apr 2022 13:31:25 GMT
  */
 
 :root {
@@ -30,4 +30,5 @@
   --color-red: #ff533d;
   --color-yellow: #e5e338;
   --color-highlight: #e61414;
+  --color-secondary: #1d61db;
 }

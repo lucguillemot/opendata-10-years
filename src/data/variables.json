@@ -27,6 +27,7 @@
     "green": "#34a29e",
     "red": "#ff533d",
     "yellow": "#e5e338",
-    "highlight": "#e61414"
+    "highlight": "#e61414",
+    "secondary": "#1d61db"
   }
 }
