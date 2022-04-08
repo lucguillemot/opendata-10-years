@@ -29,7 +29,7 @@ export const setup = {
     hackathon: [
       { city: "Sierre", topic: "Sports" },
       { city: "Basel", topic: "Sports" },
-      { city: "Milano", topic: "Sports" }
+      { city: "Milan", topic: "Sports" }
     ]
   },
   2015: {
