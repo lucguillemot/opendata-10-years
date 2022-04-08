@@ -1,10 +1,19 @@
 <script>
   export const ssr = false;
-  import map from "$svg/optimized/map.svg";
 
-  import Map from "$components/map/Map.svelte";
+  import { setup } from "$components/scrolly-setup.js";
+
+  // import Map from "$components/map/Map.svelte";
   import Section from "$components/Section.svelte";
   import doc from "$data/doc.json";
+  import MapSvg from "$components/map/Map.svg.svelte";
+  import MapLabels from "$components/map/MapLabels.html.svelte";
+  import chCombined from "$data/geo/ch-combined.json";
+  import chCities from "$lib/data/geo/ch-cities.json";
+
+  import { geoMercator } from "d3-geo";
+  import { LayerCake, Svg, Html } from "layercake";
+  import { feature } from "topojson-client";
 
   import scrollama from "scrollama";
   import { onMount } from "svelte";
@@ -12,6 +21,11 @@
   let selected = null;
   let steps = doc.years;
   let activeStep = steps[0];
+
+  const projection = geoMercator;
+  const cantons = feature(chCombined, chCombined.objects.cantons);
+  const lakes = feature(chCombined, chCombined.objects.lakes);
+  const cities = feature(chCities, chCities.objects.cities);
 
   const handleStepEnter = (response) => {
     selected = response.index;
@@ -28,6 +42,12 @@
       })
       .onStepEnter(handleStepEnter);
   });
+
+  const labels = chCities.objects.cities.geometries.map((city) => ({
+    name: city.properties.name,
+    coord: [city.properties.long, city.properties.lat]
+  }));
+  $: confCity = labels.filter((city) => city.name === setup[activeStep.year].conference);
 </script>
 
 <svelte:window />
@@ -36,9 +56,27 @@
   <div id="scrolly">
     <figure>
       {activeStep.year}
-      {activeStep.conference}
-      <!-- {@html map} -->
-      <Map />
+      <!-- {activeStep.conference} -->
+
+      <!-- <Map {yearConfCity} /> -->
+      <div class="map-container">
+        <LayerCake data={cantons}>
+          <Svg>
+            <MapSvg {projection} features={cantons.features} />
+            <MapSvg {projection} features={lakes.features} fill="aliceblue" />
+            <!-- <MapSvg {projection} features={confCity.features} fill="red" /> -->
+          </Svg>
+
+          <Html pointerEvents={false}>
+            <MapLabels
+              {projection}
+              features={confCity}
+              getCoordinates={(d) => d.coord}
+              getLabel={(d) => d.name}
+            />
+          </Html>
+        </LayerCake>
+      </div>
     </figure>
 
     <div class="scroll-area">
@@ -93,7 +131,10 @@
     transform: translate3d(0, 0, 0);
     z-index: 0;
   }
-
+  .map-container {
+    width: 100%;
+    height: 100%;
+  }
   .scroll-area {
     position: relative;
   }
