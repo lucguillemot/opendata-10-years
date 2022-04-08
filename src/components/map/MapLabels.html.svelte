@@ -23,6 +23,8 @@
   export let features = undefined;
 
   export let fontSize = "1rem";
+  export let opacity = 1;
+  export let color = "black";
 
   $: fitSizeRange = fixedAspectRatio ? [100, 100 / fixedAspectRatio] : [$width, $height];
 
@@ -40,6 +42,8 @@
       left: {coords[0]}{units};
       top: {coords[1]}{units};
       font-size: {fontSize};
+      opacity: {opacity};
+      color: {color};
     "
     >
       {getLabel(d)}
@@ -56,7 +60,7 @@
     position: absolute;
     text-align: center;
     font-size: 8px;
-    color: red;
+    color: var(--color-highlight);
     margin-top: -3px; /* To match the SVG labels, it needs a slight tweak */
     transform: translate(-50%, -50%);
   }

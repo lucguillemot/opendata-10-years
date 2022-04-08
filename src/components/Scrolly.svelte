@@ -25,6 +25,7 @@
   const projection = geoMercator;
   const cantons = feature(chCombined, chCombined.objects.cantons);
   const lakes = feature(chCombined, chCombined.objects.lakes);
+  const country = feature(chCombined, chCombined.objects.country);
   const cities = feature(chCities, chCities.objects.cities);
 
   const handleStepEnter = (response) => {
@@ -55,38 +56,54 @@
 
 <svelte:window />
 
-<Section id="years-scrolly">
+<Section id="years-scrolly" fullBleed>
   <div id="scrolly">
     <figure>
-      {activeStep.year}
-      <!-- {activeStep.conference} -->
-
-      <!-- <Map {yearConfCity} /> -->
       <div class="map-container">
         <LayerCake data={cantons}>
+          {#if setup[activeStep.year].conference === "Online"}
+            <div class="online">Online</div>
+          {/if}
           <Svg>
-            <MapSvg {projection} features={cantons.features} />
-            <MapSvg {projection} features={lakes.features} fill="aliceblue" />
+            <MapSvg {projection} features={cantons.features} stroke="#ddd" />
+            <MapSvg {projection} features={country.features} stroke="black" fill="none" />
+            <MapSvg {projection} features={lakes.features} fill="aliceblue" stroke="#ADD8FE" />
             <!-- <MapSvg {projection} features={confCity.features} fill="red" /> -->
           </Svg>
 
           <Html pointerEvents={false}>
             <MapLabels
               {projection}
+              features={labels}
+              getCoordinates={(d) => d.coord}
+              getLabel={(d) => d.name}
+              fontSize={"1.2rem"}
+              opacity={0.5}
+              color="rgb(215, 215, 215)"
+            />
+            <MapLabels
+              {projection}
               features={confCity}
               getCoordinates={(d) => d.coord}
               getLabel={(d) => d.name}
               fontSize={"3rem"}
+              opacity={1}
+              color="#e61414"
             />
             <MapLabels
               {projection}
               features={hackCities}
               getCoordinates={(d) => d.coord}
               getLabel={(d) => d.name}
-              fontSize={"1.5rem"}
+              fontSize={"1.2rem"}
+              color="#1d61db"
             />
           </Html>
         </LayerCake>
+      </div>
+      <div class="legend">
+        <div class="legend-conference">Main conference</div>
+        <div class="legend-hackathon">Hackathons</div>
       </div>
     </figure>
 
@@ -94,9 +111,9 @@
       {#each steps as step, i}
         <div class="step step-year" class:selected={selected === i}>
           {#if step.year}
-            <div class="step-title">
+            <h2 class="step-title">
               {@html step.year}
-            </div>
+            </h2>
           {/if}
           {#each step.texts as content}
             {#if content.type === "paragraph"}
@@ -125,7 +142,7 @@
     position: sticky;
 
     width: 100%;
-    height: 80vh;
+    height: 100vh;
 
     padding: 1rem;
 
@@ -141,20 +158,35 @@
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     z-index: 0;
+
+    /* background: orange; */
   }
   .map-container {
     width: 100%;
-    height: 100%;
+    height: 80%;
   }
+  .online {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: var(--color-highlight);
+    font-size: 3rem;
+  }
+  .legend {
+    align-self: flex-start;
+  }
+  .legend-conference {
+    color: var(--color-highlight);
+    font-size: 1rem;
+  }
+  .legend-hackathon {
+    color: var(--color-secondary);
+    font-size: 1rem;
+  }
+
   .scroll-area {
     position: relative;
-  }
-  h3 {
-    font-size: 2rem;
-    line-height: 1.4;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
   }
 
   .step {
@@ -200,9 +232,6 @@
     margin: 5rem 0;
   }
   @media only screen and (min-width: 30em) {
-    h3 {
-      font-size: 3rem;
-    }
   }
   @media only screen and (min-width: 50em) {
     .step {
