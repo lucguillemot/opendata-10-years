@@ -25,67 +25,73 @@ export const setup = {
     ]
   },
   2014: {
-    conference: "Geneva",
+    conference: "Zurich",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Sierre", topic: "Sports" },
+      { city: "Basel", topic: "Sports" },
+      { city: "Milano", topic: "Sports" }
     ]
   },
   2015: {
-    conference: "Geneva",
+    conference: "Bern",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Bern", topic: "Culture" },
+      { city: "Zurich", topic: "Research / Election" },
+      { city: "Lausanne", topic: "Research / Election" }
     ]
   },
   2016: {
-    conference: "Geneva",
+    conference: "Lausanne",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Grimseltor", topic: "Energy" },
+      { city: "Vert-Bois", topic: "Energy" },
+      { city: "Basel", topic: "Culture" }
     ]
   },
   2017: {
-    conference: "Geneva",
+    conference: "Lucerne",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Zurich", topic: "Food / Archive" },
+      { city: "Lausanne", topic: "Food / Culture" },
+      { city: "Arosa", topic: "Tourism" }
     ]
   },
   2018: {
-    conference: "Geneva",
+    conference: "St.Gallen",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Zurich", topic: "Plurilinguism / Culture" },
+      { city: "Lasuanne", topic: "Food" },
+      { city: "Basel", topic: "Food" },
+      { city: "Zug", topic: "Food" }
     ]
   },
   2019: {
-    conference: "Geneva",
+    conference: "Bern",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Sion", topic: "Culture" },
+      { city: "Aarau", topic: "Energy" },
+      { city: "Lucerne", topic: "Tourism" },
+      { city: "Zuoz", topic: "Education" }
     ]
   },
   2020: {
-    conference: "Geneva",
+    conference: "Online",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Online", topic: "Culture" },
+      { city: "Online", topic: "Covid" },
+      { city: "Liebegg", topic: "Farming" },
+      { city: "Aarau", topic: "Energy" }
     ]
   },
   2021: {
-    conference: "Geneva",
+    conference: "Online",
     hackathon: [
-      { city: "Sierre", topic: "Finance" },
-      { city: "Bern", topic: "Finance" },
-      { city: "Zurich", topic: "Open Data" }
+      { city: "Online", topic: "Culture" },
+      { city: "Liebegg", topic: "Farming" },
+      { city: "Aarau", topic: "Energy" },
+      { city: "Online", topic: "Journalism" },
+      { city: "Lenzburg", topic: "Smart Regio Lab" },
+      { city: "Bern", topic: "Open Data" }
     ]
   }
 };
