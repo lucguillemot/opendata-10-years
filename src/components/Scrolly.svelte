@@ -48,6 +48,9 @@
     coord: [city.properties.long, city.properties.lat]
   }));
   $: confCity = labels.filter((city) => city.name === setup[activeStep.year].conference);
+  $: hackCities = labels.filter((city) =>
+    setup[activeStep.year].hackathon.map((hack) => hack.city).includes(city.name)
+  );
 </script>
 
 <svelte:window />
@@ -73,6 +76,14 @@
               features={confCity}
               getCoordinates={(d) => d.coord}
               getLabel={(d) => d.name}
+              fontSize={"3rem"}
+            />
+            <MapLabels
+              {projection}
+              features={hackCities}
+              getCoordinates={(d) => d.coord}
+              getLabel={(d) => d.name}
+              fontSize={"1.5rem"}
             />
           </Html>
         </LayerCake>
