@@ -181,9 +181,18 @@
   .step-title {
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: 1.5rem;
-    border-bottom: 3px solid var(--color-highlight);
+    font-size: 2rem;
+    text-align: center;
     padding: 1rem 0;
+  }
+  .step-title::after {
+    display: block;
+    content: "";
+    background: var(--color-highlight);
+    height: 3px;
+    width: 100px;
+    margin: 1.5rem auto 2rem;
+    border-radius: 2px;
   }
   .step-text {
     font-size: 1.3rem;
