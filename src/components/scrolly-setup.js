@@ -45,7 +45,8 @@ export const setup = {
     hackathon: [
       { city: "Grimseltor", topic: "Energy" },
       { city: "Vert-Bois", topic: "Energy" },
-      { city: "Basel", topic: "Culture" }
+      { city: "Basel", topic: "Culture" },
+      { city: "St.Gallen", topic: "Health" }
     ]
   },
   2017: {
