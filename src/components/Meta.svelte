@@ -1,6 +1,6 @@
 <script>
-  export let title = "Opendata.ch 10 Jahre Rückblick";
-  export let description = "Opendata.ch 10 Jahre Rückblick";
+  export let title = "Opendata.ch 10 Year Review";
+  export let description = "Opendata.ch 10 Year Review";
   export let url = "https://opendata.ch/";
   export let keywords = "opendata, switzerland, open knowledge";
   export let preloadFont = [];
