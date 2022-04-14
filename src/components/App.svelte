@@ -19,16 +19,31 @@
 <style>
   h1 {
     font-family: "m3regular";
-    font-size: 5.625rem;
     line-height: 1.2;
     text-align: center;
+    font-size: 3.5rem;
   }
   p {
     font-family: "m3light";
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.4;
     font-weight: 300;
     text-align: center;
     margin: 3rem 0;
+  }
+
+  @media only screen and (min-width: 30em) {
+    h1 {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (min-width: 50em) {
+    h1 {
+      font-size: 6rem;
+    }
   }
 </style>
