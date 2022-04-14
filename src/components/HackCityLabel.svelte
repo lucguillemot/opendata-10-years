@@ -29,7 +29,7 @@
 
 <style>
   .wrapper {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
     line-height: 1;
   }
   @media only screen and (min-width: 30em) {

@@ -33,7 +33,7 @@
             "name": "Geneva",
             "lat": 46.204391,
             "long": 6.143158,
-            "offset": "top-center",
+            "offset": "top-right",
             "offset2": "middle-right"
           }
         },
@@ -55,7 +55,7 @@
             "name": "Lucerne",
             "lat": 47.0667,
             "long": 8.3333,
-            "offset": "top-center",
+            "offset": "top-right",
             "offset2": "middle-right"
           }
         },
@@ -154,7 +154,7 @@
             "name": "Zuoz",
             "lat": 46.64078,
             "long": 9.95988,
-            "offset": "top-right",
+            "offset": "top-left",
             "offset2": "middle-right"
           }
         },
@@ -165,7 +165,7 @@
             "name": "Liebegg",
             "lat": 47.342811,
             "long": 8.118293,
-            "offset": "bottom-center",
+            "offset": "bottom-right",
             "offset2": "middle-right"
           }
         },

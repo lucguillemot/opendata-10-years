@@ -1,6 +1,5 @@
 <script>
   export const ssr = false;
-
   import { setup } from "$components/scrolly-setup.js";
   import Section from "$components/Section.svelte";
   import doc from "$data/doc.json";
@@ -38,7 +37,7 @@
       .setup({
         step: `div .step-year`,
         // debug: true,
-        offset: 0.5
+        offset: 0.6
       })
       .onStepEnter(handleStepEnter);
   });
@@ -51,9 +50,7 @@
     offsetConf: city.properties.offset2
   }));
   $: confCity = labels.filter((city) => city.name === setup[activeStep.year].conference);
-  $: hackCities = labels.filter((city) =>
-    setup[activeStep.year].hackathon.map((hack) => hack.city).includes(city.name)
-  );
+
   $: hackTopics = labels
     .filter((city) => setup[activeStep.year].hackathon.map((hack) => hack.city).includes(city.name))
     .map((city) => ({
@@ -70,9 +67,6 @@
     confCity.length > 0
       ? cities.features.filter((d) => confCity[0].name === d.properties.name)
       : [];
-
-  $: console.log(cities.features);
-  $: console.log({ hackDots });
 </script>
 
 <svelte:window />
@@ -88,7 +82,7 @@
             {/if}
             <Svg>
               <MapSvg {projection} features={cantons.features} stroke="#ddd" />
-              <MapSvg {projection} features={country.features} stroke="black" fill="none" />
+              <MapSvg {projection} features={country.features} stroke="#888" fill="none" />
               <MapSvg {projection} features={lakes.features} fill="aliceblue" stroke="#ADD8FE" />
               <MapSvg
                 {projection}
@@ -139,6 +133,7 @@
           </LayerCake>
         </div>
         <div class="legend">
+          {activeStep.year}
           <div class="legend-conference">Main conference</div>
           <div class="legend-hackathon">Hackathons</div>
         </div>
@@ -183,7 +178,7 @@
     position: relative;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   /* FIGURE */
@@ -195,10 +190,9 @@
     height: 100vh;
 
     padding: 1rem;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 
     left: 0;
@@ -213,8 +207,7 @@
   }
   .map-container {
     width: 100%;
-    height: 80%;
-    padding: 2rem;
+    height: 60%;
   }
   .online {
     position: absolute;
@@ -226,6 +219,7 @@
   }
   .legend {
     align-self: flex-start;
+
     /* background: gold; */
   }
   .legend-conference {
@@ -255,7 +249,7 @@
     position: relative;
   }
   .step:first-child {
-    margin-top: 15rem;
+    margin-top: 16rem;
   }
   .step:last-child {
     margin-bottom: 100vh;
@@ -270,6 +264,7 @@
     font-size: 2rem;
     text-align: center;
     padding: 1rem 0;
+    background: rgba(255, 255, 255, 1);
   }
   .step-title::after {
     display: block;
@@ -283,15 +278,22 @@
   .step-text {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 2px;
+  }
+  .step-text:not(:first-of-type) {
+    margin: 10rem 0;
   }
   .step-image {
-    margin-bottom: 1rem;
+    margin: 10rem 0;
   }
 
   figure.quote {
     background: #efefef;
     border-radius: 4px;
     padding: 1rem;
+    margin: 10rem 0;
   }
   blockquote {
     margin: 0;
@@ -310,11 +312,36 @@
   blockquote p::after {
     content: "\201D";
   }
-  @media only screen and (min-width: 30em) {
-  }
+
   @media only screen and (min-width: 50em) {
     .step {
       margin: 50rem auto 2rem auto;
+    }
+    #scrolly {
+      grid-template-columns: 2fr 1fr;
+    }
+    figure.map {
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .map-container {
+      padding: 2rem;
+      height: 80%;
+    }
+
+    .step-text {
+      background: transparent;
+      padding: 0;
+    }
+    .step-text:not(:first-of-type) {
+      margin: 1rem 0;
+    }
+    .step-image {
+      margin: 0 0 1rem 0;
+    }
+
+    figure.quote {
+      margin: 1rem 0;
     }
   }
 </style>
