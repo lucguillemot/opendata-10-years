@@ -7,97 +7,211 @@
         {
           "type": "Point",
           "coordinates": [341901, 708060],
-          "properties": { "name": "Bern", "lat": 46.9479, "long": 7.4481 }
+          "properties": {
+            "name": "Bern",
+            "lat": 46.9479,
+            "long": 7.4481,
+            "offset": "top-center",
+            "offset2": "bottom-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [628429, 913424],
-          "properties": { "name": "Zurich", "lat": 47.3782, "long": 8.5417 }
+          "properties": {
+            "name": "Zurich",
+            "lat": 47.3782,
+            "long": 8.5417,
+            "offset": "top-center",
+            "offset2": "bottom-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [0, 353214],
-          "properties": { "name": "Geneva", "lat": 46.204391, "long": 6.143158 }
+          "properties": {
+            "name": "Geneva",
+            "lat": 46.204391,
+            "long": 6.143158,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [128419, 503650],
-          "properties": { "name": "Lausanne", "lat": 46.5196, "long": 6.6333 }
+          "properties": {
+            "name": "Lausanne",
+            "lat": 46.5196,
+            "long": 6.6333,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [573827, 764758],
-          "properties": { "name": "Lucerne", "lat": 47.0667, "long": 8.3333 }
+          "properties": {
+            "name": "Lucerne",
+            "lat": 47.0667,
+            "long": 8.3333,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [378706, 999999],
-          "properties": { "name": "Basel", "lat": 47.559601, "long": 7.588576 }
+          "properties": {
+            "name": "Basel",
+            "lat": 47.559601,
+            "long": 7.588576,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [340643, 395647],
-          "properties": { "name": "Sierre", "lat": 46.2933, "long": 7.4433 }
+          "properties": {
+            "name": "Sierre",
+            "lat": 46.2933,
+            "long": 7.4433,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [797632, 0],
-          "properties": { "name": "Milan", "lat": 45.4643, "long": 9.1875 }
+          "properties": {
+            "name": "Milan",
+            "lat": 45.4643,
+            "long": 9.1875,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [460301, 510189],
-          "properties": { "name": "Grimseltor", "lat": 46.5333, "long": 7.9 }
+          "properties": {
+            "name": "Grimseltor",
+            "lat": 46.5333,
+            "long": 7.9,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [923546, 621490],
-          "properties": { "name": "Arosa", "lat": 46.76651, "long": 9.66808 }
+          "properties": {
+            "name": "Arosa",
+            "lat": 46.76651,
+            "long": 9.66808,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [621563, 812230],
-          "properties": { "name": "Zug", "lat": 47.166168, "long": 8.515495 }
+          "properties": {
+            "name": "Zug",
+            "lat": 47.166168,
+            "long": 8.515495,
+            "offset": "bottom-left",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [316198, 367011],
-          "properties": { "name": "Sion", "lat": 46.2333, "long": 7.35 }
+          "properties": {
+            "name": "Sion",
+            "lat": 46.2333,
+            "long": 7.35,
+            "offset": "bottom-right",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [495226, 915858],
-          "properties": { "name": "Aarau", "lat": 47.3833, "long": 8.0333 }
+          "properties": {
+            "name": "Aarau",
+            "lat": 47.3833,
+            "long": 8.0333,
+            "offset": "top-left",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [999999, 561484],
-          "properties": { "name": "Zuoz", "lat": 46.64078, "long": 9.95988 }
+          "properties": {
+            "name": "Zuoz",
+            "lat": 46.64078,
+            "long": 9.95988,
+            "offset": "top-right",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [517495, 896534],
-          "properties": { "name": "Liebegg", "lat": 47.342811, "long": 8.118293 }
+          "properties": {
+            "name": "Liebegg",
+            "lat": 47.342811,
+            "long": 8.118293,
+            "offset": "bottom-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [531934, 919257],
-          "properties": { "name": "Lenzburg", "lat": 47.3904217, "long": 8.1734041 }
+          "properties": {
+            "name": "Lenzburg",
+            "lat": 47.3904217,
+            "long": 8.1734041,
+            "offset": "top-right",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [281195, 800543],
-          "properties": { "name": "Magglingen", "lat": 47.141681, "long": 7.2164019 }
+          "properties": {
+            "name": "Magglingen",
+            "lat": 47.141681,
+            "long": 7.2164019,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [745742, 202806],
-          "properties": { "name": "Mendrisio", "lat": 45.88924, "long": 8.98945 }
+          "properties": {
+            "name": "Mendrisio",
+            "lat": 45.88924,
+            "long": 8.98945,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         },
         {
           "type": "Point",
           "coordinates": [847098, 937335],
-          "properties": { "name": "St.Gallen", "lat": 47.4283, "long": 9.3763 }
+          "properties": {
+            "name": "St.Gallen",
+            "lat": 47.4283,
+            "long": 9.3763,
+            "offset": "top-center",
+            "offset2": "middle-right"
+          }
         }
       ]
     }

@@ -4,6 +4,7 @@
  -->
 <script>
   import { getContext } from "svelte";
+  import HackCityLabel from "../HackCityLabel.svelte";
 
   const { data, width, height } = getContext("LayerCake");
 
@@ -14,7 +15,9 @@
   export let fixedAspectRatio = undefined;
 
   /** @type {Function} getLabel - An accessor function to get the field to display. */
-  export let getLabel;
+  export let getCity;
+  export let getTopic;
+  export let getOffset;
 
   /** @type {Function} [getCoordinates=d => d.geometry.coordinates] - An accessor function to get the `[x, y]` coordinate field. Defaults to a GeoJSON feature format. */
   export let getCoordinates;
@@ -46,7 +49,7 @@
       color: {color};
     "
     >
-      {getLabel(d)}
+      <HackCityLabel city={getCity(d)} topic={getTopic(d)} offset={getOffset(d)} />
     </div>
   {/each}
 </div>
@@ -61,7 +64,7 @@
     text-align: center;
     font-size: 8px;
     color: var(--color-highlight);
-    margin-top: -3px; /* To match the SVG labels, it needs a slight tweak */
+    margin-top: -3px;
     transform: translate(-50%, -50%);
   }
 </style>

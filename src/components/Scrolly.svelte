@@ -5,7 +5,7 @@
   import Section from "$components/Section.svelte";
   import doc from "$data/doc.json";
   import MapSvg from "$components/map/Map.svg.svelte";
-  import MapLabels from "$components/map/MapLabels.html.svelte";
+  import ConfLabels from "$lib/components/map/ConfLabels.html.svelte";
   import chCombined from "$data/geo/ch-combined.json";
   import chCities from "$lib/data/geo/ch-cities.json";
 
@@ -15,6 +15,7 @@
 
   import scrollama from "scrollama";
   import { onMount } from "svelte";
+  import HackLabels from "./map/HackLabels.html.svelte";
 
   let selected = null;
   let steps = doc.years;
@@ -42,14 +43,36 @@
       .onStepEnter(handleStepEnter);
   });
 
+  // HTML LABELS
   const labels = chCities.objects.cities.geometries.map((city) => ({
     name: city.properties.name,
-    coord: [city.properties.long, city.properties.lat]
+    coord: [city.properties.long, city.properties.lat],
+    offset: city.properties.offset,
+    offsetConf: city.properties.offset2
   }));
   $: confCity = labels.filter((city) => city.name === setup[activeStep.year].conference);
   $: hackCities = labels.filter((city) =>
     setup[activeStep.year].hackathon.map((hack) => hack.city).includes(city.name)
   );
+  $: hackTopics = labels
+    .filter((city) => setup[activeStep.year].hackathon.map((hack) => hack.city).includes(city.name))
+    .map((city) => ({
+      topic: setup[activeStep.year].hackathon.find((hackCity) => hackCity.city === city.name).topic,
+      ...city
+    }));
+
+  // TOPOJSON
+  $: hackDots = cities.features.filter((d) =>
+    hackTopics.map((d) => d.name).includes(d.properties.name)
+  );
+  $: console.log({ confCity });
+  $: confCityDot =
+    confCity.length > 0
+      ? cities.features.filter((d) => confCity[0].name === d.properties.name)
+      : [];
+
+  $: console.log(cities.features);
+  $: console.log({ hackDots });
 </script>
 
 <svelte:window />
@@ -67,34 +90,49 @@
               <MapSvg {projection} features={cantons.features} stroke="#ddd" />
               <MapSvg {projection} features={country.features} stroke="black" fill="none" />
               <MapSvg {projection} features={lakes.features} fill="aliceblue" stroke="#ADD8FE" />
-              <!-- <MapSvg {projection} features={confCity.features} fill="red" /> -->
+              <MapSvg
+                {projection}
+                features={confCityDot}
+                fill={"#e61414"}
+                strokeWidth={0}
+                radius={5}
+              />
+              <MapSvg
+                {projection}
+                features={hackDots}
+                fill={"#1d61db"}
+                strokeWidth={0}
+                radius={3}
+              />
             </Svg>
 
             <Html pointerEvents={false}>
-              <MapLabels
+              <!-- <MapLabels
                 {projection}
                 features={labels}
                 getCoordinates={(d) => d.coord}
-                getLabel={(d) => d.name}
+                getCity={(d) => d.name}
                 fontSize={"1.2rem"}
                 opacity={0.5}
                 color="rgb(215, 215, 215)"
-              />
-              <MapLabels
+              /> -->
+              <ConfLabels
                 {projection}
                 features={confCity}
                 getCoordinates={(d) => d.coord}
-                getLabel={(d) => d.name}
-                fontSize={"3rem"}
+                getCity={(d) => d.name}
+                getOffset={(d) => d.offsetConf}
                 opacity={1}
                 color="#e61414"
               />
-              <MapLabels
+
+              <HackLabels
                 {projection}
-                features={hackCities}
+                features={hackTopics}
                 getCoordinates={(d) => d.coord}
-                getLabel={(d) => d.name}
-                fontSize={"1.2rem"}
+                getCity={(d) => d.name}
+                getTopic={(d) => d.topic}
+                getOffset={(d) => d.offset}
                 color="#1d61db"
               />
             </Html>
