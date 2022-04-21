@@ -321,7 +321,7 @@
       grid-template-columns: 2fr 1fr;
     }
     figure.map {
-      justify-content: space-between;
+      justify-content: center;
       padding: 1rem;
     }
     .map-container {
