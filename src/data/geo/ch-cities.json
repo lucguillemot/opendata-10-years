@@ -22,8 +22,8 @@
             "name": "Zurich",
             "lat": 47.3782,
             "long": 8.5417,
-            "offset": "top-center",
-            "offset2": "bottom-right"
+            "offset": "bottom-right",
+            "offset2": "top-right"
           }
         },
         {
@@ -165,7 +165,7 @@
             "name": "Liebegg",
             "lat": 47.342811,
             "long": 8.118293,
-            "offset": "bottom-right",
+            "offset": "bottom-center",
             "offset2": "middle-right"
           }
         },
@@ -210,7 +210,8 @@
             "lat": 47.4283,
             "long": 9.3763,
             "offset": "top-center",
-            "offset2": "middle-right"
+            "offset2": "top-right"
+          }
         },
         {
           "type": "Point",
