@@ -22,6 +22,10 @@
         and English.
       </p>
       <p>Opendata.ch <br />4000 Basel</p>
+      <p>
+        Code and data for this website <br />on
+        <a href="https://github.com/OpendataCH/opendata-10-years/tree/main/src/data">Github</a>.
+      </p>
     </section>
 
     <section class="links">
