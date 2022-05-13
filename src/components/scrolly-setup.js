@@ -81,13 +81,15 @@ export const setup = {
       { city: "Online", topic: "Culture" },
       { city: "Online", topic: "Covid" },
       { city: "Liebegg", topic: "Farming" },
-      { city: "Aarau", topic: "Energy" }
+      { city: "Aarau", topic: "Energy" },
+      { city: "Graubünden", topic: "Culture" }
     ]
   },
   2021: {
     conference: "Online",
     hackathon: [
       { city: "Online", topic: "Culture" },
+      { city: "Zurich", topic: "Culture" },
       { city: "Liebegg", topic: "Farming" },
       { city: "Aarau", topic: "Energy" },
       { city: "Online", topic: "Journalism" },
