@@ -62,7 +62,7 @@
   $: hackDots = cities.features.filter((d) =>
     hackTopics.map((d) => d.name).includes(d.properties.name)
   );
-  $: console.log({ confCity });
+
   $: confCityDot =
     confCity.length > 0
       ? cities.features.filter((d) => confCity[0].name === d.properties.name)
@@ -101,15 +101,6 @@
             </Svg>
 
             <Html pointerEvents={false}>
-              <!-- <MapLabels
-                {projection}
-                features={labels}
-                getCoordinates={(d) => d.coord}
-                getCity={(d) => d.name}
-                fontSize={"1.2rem"}
-                opacity={0.5}
-                color="rgb(215, 215, 215)"
-              /> -->
               <ConfLabels
                 {projection}
                 features={confCity}
