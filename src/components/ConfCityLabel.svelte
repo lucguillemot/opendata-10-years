@@ -9,7 +9,7 @@
       case "top-center":
         return "translate(0, -55%)";
       case "top-right":
-        return "translate(55%, -55%)";
+        return "translate(75%, -125%)";
       case "bottom-right":
         return "translate(65%, 25%)";
       case "bottom-center":
