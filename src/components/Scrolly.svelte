@@ -58,6 +58,8 @@
       ...city
     }));
 
+  $: onlineHackathons = setup[activeStep.year].hackathon.filter((hack) => hack.city === "Online");
+
   // TOPOJSON
   $: hackDots = cities.features.filter((d) =>
     hackTopics.map((d) => d.name).includes(d.properties.name)
@@ -79,6 +81,13 @@
           <LayerCake data={cantons}>
             {#if setup[activeStep.year].conference === "Online"}
               <div class="online">Online</div>
+            {/if}
+            {#if onlineHackathons.length > 0}
+              {#each onlineHackathons as hack, i}
+                <div class="online-hackathon" style="top: {56 + 20 * i}px">
+                  + {hack.topic}
+                </div>
+              {/each}
             {/if}
             <Svg>
               <MapSvg {projection} features={cantons.features} stroke="#ddd" />
@@ -206,7 +215,14 @@
     left: 0;
 
     color: var(--color-highlight);
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+  .online-hackathon {
+    position: absolute;
+    left: 0;
+
+    color: var(--color-secondary);
+    font-size: 1rem;
   }
   .legend {
     align-self: flex-start;
