@@ -211,6 +211,16 @@
             "long": 9.3763,
             "offset": "top-center",
             "offset2": "middle-right"
+        },
+        {
+          "type": "Point",
+          "coordinates": [883131, 572884],
+          "properties": {
+            "name": "Graubünden",
+            "lat": 46.6646659,
+            "long": 9.513825,
+            "offset": "top-center",
+            "offset2": "top-center"
           }
         }
       ]
