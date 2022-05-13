@@ -1,5 +1,5 @@
 <script>
-  const url = ``;
+  import doc from "$data/doc.json";
 
   const links = [
     { name: "about", url: "https://opendata.ch/about/" },
@@ -23,8 +23,7 @@
       </p>
       <p>Opendata.ch <br />4000 Basel</p>
       <p>
-        Code and data for this website <br />on
-        <a href="https://github.com/OpendataCH/opendata-10-years/tree/main/src/data">Github</a>.
+        {@html doc.footer_code_link}
       </p>
     </section>
 
