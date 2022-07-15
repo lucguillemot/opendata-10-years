@@ -230,8 +230,7 @@
     text-decoration: none;
   }
 
-  .links span,
-  .socials span {
+  .links span {
     margin-left: 0;
   }
 

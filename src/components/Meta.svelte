@@ -1,7 +1,7 @@
 <script>
   export let title = "Opendata.ch 10 Year Review";
   export let description = "Opendata.ch 10 Year Review";
-  export let url = "https://opendata.ch/";
+  export let url = "https://10years.opendata.ch";
   export let keywords = "opendata, switzerland, open knowledge";
   export let preloadFont = [];
 </script>
@@ -25,7 +25,7 @@
   <meta property="og:image:height" content="600" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="https://opendata.ch/" />
+  <meta name="twitter:site" content={url} />
   <meta name="twitter:creator" content="@OpendataCH" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
